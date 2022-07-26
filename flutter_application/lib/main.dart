@@ -1,72 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/Screen1.dart';
+import 'package:flutter_application/Screen2.dart';
+
+import 'HomeScreen.dart';
+import 'MyButtons.dart';
+import 'Screen0.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-        home: Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Koenig Solutions Pvt. Ltd',
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.deepOrange,
-      ),
-      body: Column(
-        children: [
-          Card(
-            margin: EdgeInsets.all(10),
-            child: Row(
-              children: [
-                Image(
-                  image: NetworkImage(
-                      'https://miro.medium.com/max/500/1*cPh7ujRIfcHAy4kW2ADGOw.png'),
-                  width: 120,
-                  height: 120,
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                Text(
-                  "ReactJS Training",
-                  style: TextStyle(
-                    fontFamily: 'DancingScript',
-                    fontSize: 36,
-                    color: Colors.orange,
-                  ),
-                )
-              ],
-            ),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-            color: Colors.purple,
-          ),
-
-          // Card-2
-          Card(
-            margin: EdgeInsets.all(10),
-            child: Row(
-              children: [
-                Image(
-                  image: NetworkImage(
-                      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png'),
-                  width: 120,
-                  height: 120,
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                Text(
-                  "Angular Training",
-                  style: TextStyle(fontSize: 30, color: Colors.orange),
-                )
-              ],
-            ),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-            color: Colors.purple,
-          ),
-        ],
-      ),
-    )),
-  );
+  runApp(MaterialApp(
+    home: HomeScreen(),
+    routes: {
+      'S0': (context) => Screen0(title: "Contact", msg:'Good Morning'),
+      'S1': (context) => Screen1(title: 'Gallary'),
+      'S2': (context) => Screen2(title: 'Camera')
+    },
+  ));
 }
