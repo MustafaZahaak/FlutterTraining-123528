@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/Screen2.dart';
-
 import 'WebView.dart';
 
-class Screen1 extends StatelessWidget {
-  var title = "";
-  Screen1({Key key, this.title}) : super(key: key);
+class Buttonpage extends StatelessWidget {
+  Buttonpage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text("Payment Page"),
         backgroundColor: Colors.deepOrange,
       ),
       body: Center(
         child: Container(
           child: ElevatedButton(
-            child: Text('Goto Scrren-2'),
+            child: Text('Do Payment'),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return WebViewDemo();
