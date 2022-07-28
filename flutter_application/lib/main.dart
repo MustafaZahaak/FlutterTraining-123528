@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/Screen1.dart';
 import 'package:flutter_application/Screen2.dart';
 
+import 'BackgroundImageDemo.dart';
 import 'BottomNavigationDemo.dart';
 import 'ButtonPage.dart';
 import 'DataTableDemo.dart';
@@ -9,8 +10,11 @@ import 'DrawerDemo.dart';
 import 'HomeScreen.dart';
 import 'ListTileDemo.dart';
 import 'MyButtons.dart';
+import 'PizzaApp.dart';
+import 'SICalculator.dart';
 import 'Screen0.dart';
 import 'SelectableText.dart';
+import 'StackWidgetDemo.dart';
 import 'TabBar.dart';
 import 'TabBar1.dart';
 import 'WebView.dart';
@@ -26,11 +30,14 @@ void main() {
     // home: DrawerDemo(),
     // home: DataTableDemo(),
     // home: SelectableTextDemo(),
-    home: Buttonpage(),
-
+    // home: Buttonpage(),
+    //  home: SICalculator(),
+    // home: PizzaApp(),
+    //  home: StackWidgetDemo(),
+     home: BackgroundImageDemo(),
 
     routes: {
-      'S0': (context) => Screen0(title: "Contact", msg:'Good Morning'),
+      'S0': (context) => Screen0(title: "Contact", msg: 'Good Morning'),
       'S1': (context) => Screen1(title: 'Gallary'),
       'S2': (context) => Screen2(title: 'Camera')
     },
