@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/Screen1.dart';
-import 'package:flutter_application/Screen2.dart';
 
+import 'ExpansionPanelDemo.dart';
+import 'ModelBottomSheetDemo.dart';
+import 'Notifications.dart';
+import 'Screen1.dart';
+import 'Screen2.dart';
 import 'BackgroundImageDemo.dart';
 import 'BottomNavigationDemo.dart';
-import 'ButtonPage.dart';
+import 'PaymentPage.dart';
 import 'DataTableDemo.dart';
 import 'DrawerDemo.dart';
 import 'HomeScreen.dart';
@@ -34,7 +37,10 @@ void main() {
     //  home: SICalculator(),
     // home: PizzaApp(),
     //  home: StackWidgetDemo(),
-     home: BackgroundImageDemo(),
+    //  home: BackgroundImageDemo(),
+    //  home: BottomSheetDemo(),
+    //  home: ExpansionPanelDemo(),
+     home: Notifications(),
 
     routes: {
       'S0': (context) => Screen0(title: "Contact", msg: 'Good Morning'),

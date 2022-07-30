@@ -1,8 +1,5 @@
-import 'dart:io';
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_application/ButtonPage.dart';
+import 'package:flutter_application/PaymentPage.dart';
 import 'package:grouped_buttons/grouped_buttons.dart';
 
 class PizzaApp extends StatefulWidget {
@@ -64,28 +61,32 @@ class _PizzaAppState extends State<PizzaApp> {
                   });
                 },
               ),
-              Text(
-                'Pizza Quantity:',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-              ),
-              Slider(
-                  value: _initialValue,
-                  min: 0,
-                  max: 20,
-                  divisions: 20,
-                  label: '$_initialValue',
-                  onChanged: (newValue) {
-                    setState(() {
-                      _initialValue = newValue;
-                    });
-                    print("Pizza Quantity: $_initialValue");
-                  }),
-              Text(
-                'Payment Status:',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              Row(
+                children: [
+                  Text(
+                    'Pizza Quantity:',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
+                  Slider(
+                      value: _initialValue,
+                      min: 0,
+                      max: 20,
+                      divisions: 20,
+                      label: '$_initialValue',
+                      onChanged: (newValue) {
+                        setState(() {
+                          _initialValue = newValue;
+                        });
+                        print("Pizza Quantity: $_initialValue");
+                      }),
+                ],
               ),
               Row(
                 children: [
+                  Text(
+                    'Payment Status:',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
                   Switch(
                       value: _isPaid,
                       onChanged: (bool status) {
@@ -164,9 +165,14 @@ class _PizzaAppState extends State<PizzaApp> {
     // For IOS Alert Dialog Box
     // var alertDialog = CupertinoAlertDialog(
     var alertDialog = AlertDialog(
-      title: Text("This is your Order"),
+      title: Text(
+        "Your Order",
+        style: TextStyle(
+            color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 30),
+        textAlign: TextAlign.center,
+      ),
       content: Text(
-          'Topping: $PizzaTopping\nPizza Size: $PizzaSize\nPizza Quantity: $_initialValue\nDelivery Date: $today\nDelivery Time: $todayTime'),
+          'Topping: $PizzaTopping\nPizza Size: $PizzaSize\nPizza Quantity: $_initialValue\nDelivery Date: ${today.day}-${today.month}-${today.year}\nDelivery Time: ${todayTime.hour}:${todayTime.minute}'),
       actions: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -174,7 +180,7 @@ class _PizzaAppState extends State<PizzaApp> {
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return Buttonpage();
+                    return PaymentPage();
                   }));
                 },
                 child: Text("Pay")),
