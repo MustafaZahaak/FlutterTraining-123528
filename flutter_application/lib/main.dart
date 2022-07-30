@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
+import 'Authentication/HomePage.dart';
+import 'Authentication/NewAccount.dart';
 import 'ExpansionPanelDemo.dart';
 import 'ModelBottomSheetDemo.dart';
 import 'Notifications.dart';
@@ -22,7 +25,10 @@ import 'TabBar.dart';
 import 'TabBar1.dart';
 import 'WebView.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     // home: HomeScreen(),
@@ -40,7 +46,9 @@ void main() {
     //  home: BackgroundImageDemo(),
     //  home: BottomSheetDemo(),
     //  home: ExpansionPanelDemo(),
-     home: Notifications(),
+    //  home: Notifications(),
+    //  home: NewAccount(),
+    home: HomePage(),
 
     routes: {
       'S0': (context) => Screen0(title: "Contact", msg: 'Good Morning'),

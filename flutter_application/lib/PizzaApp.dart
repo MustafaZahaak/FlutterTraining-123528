@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/PaymentPage.dart';
 import 'package:grouped_buttons/grouped_buttons.dart';
@@ -10,6 +11,8 @@ class PizzaApp extends StatefulWidget {
 }
 
 class _PizzaAppState extends State<PizzaApp> {
+  FirebaseAuth _auth = FirebaseAuth.instance;
+
   double _initialValue = 0.0;
   bool _isPaid = false;
   String PizzaTopping = "";
@@ -23,7 +26,18 @@ class _PizzaAppState extends State<PizzaApp> {
     return Scaffold(
         appBar: AppBar(
           title: Text("Pizza App"),
-          centerTitle: true,
+          actions: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 10, 50, 10),
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(primary: Colors.orange),
+                  onPressed: () {
+                    _auth.signOut();
+                    Navigator.pop(context);
+                  },
+                  child: Text("Logout")),
+            )
+          ],
         ),
         body: Padding(
           padding: const EdgeInsets.all(10.0),
