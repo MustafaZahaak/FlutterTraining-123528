@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'Authentication/HomePage.dart';
 import 'Authentication/NewAccount.dart';
 import 'ExpansionPanelDemo.dart';
+import 'GoogleMapDemo.dart';
 import 'ModelBottomSheetDemo.dart';
 import 'Notifications.dart';
 import 'Screen1.dart';
@@ -48,7 +49,8 @@ void main() async {
     //  home: ExpansionPanelDemo(),
     //  home: Notifications(),
     //  home: NewAccount(),
-    home: HomePage(),
+    // home: HomePage(),
+    home: GoogleMapDemo(),
 
     routes: {
       'S0': (context) => Screen0(title: "Contact", msg: 'Good Morning'),

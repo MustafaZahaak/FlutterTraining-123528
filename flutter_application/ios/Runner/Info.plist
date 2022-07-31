@@ -47,5 +47,6 @@
 	<true/>
 	<key>io.flutter.embedded_view_preview</key>
 	<string>YES</string>
+	
 </dict>
 </plist>
