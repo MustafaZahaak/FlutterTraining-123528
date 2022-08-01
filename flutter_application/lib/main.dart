@@ -5,6 +5,7 @@ import 'Authentication/HomePage.dart';
 import 'Authentication/NewAccount.dart';
 import 'ExpansionPanelDemo.dart';
 import 'GoogleMapDemo.dart';
+import 'LocalDBDemo.dart';
 import 'ModelBottomSheetDemo.dart';
 import 'Notifications.dart';
 import 'Screen1.dart';
@@ -50,7 +51,8 @@ void main() async {
     //  home: Notifications(),
     //  home: NewAccount(),
     // home: HomePage(),
-    home: GoogleMapDemo(),
+    // home: GoogleMapDemo(),
+    home: LocalDbDemo(),
 
     routes: {
       'S0': (context) => Screen0(title: "Contact", msg: 'Good Morning'),
